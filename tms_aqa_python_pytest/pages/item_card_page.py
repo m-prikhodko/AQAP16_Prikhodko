@@ -34,11 +34,12 @@ class ItemHelper(BasePage):
     def item_to_favorites(self):
         fav_icon = self.find_element(MFItemCartLocators.FAV_BUTTON)
         delivery_btn = self.find_element(MFItemCartLocators.DELIVERIES_POPUP)
-        self.scroll_to_element(delivery_btn)
+        # self.scroll_to_element(delivery_btn)
         # actions.move_to_element(delivery_btn)
         # actions.perform()
-        fav_icon.click()
         # self.driver.execute_script("arguments[0].click();", MFItemCartLocators.FAV_BUTTON)
+        self.driver.execute_script("arguments[0](open_url).click();",
+                                   MFItemCartLocators.FAV_BUTTON)
         return fav_icon
 
     def open_deliveries(self):
